@@ -131,3 +131,9 @@ export const CardData = (card_bin_id: card_types) => {
     const { cards } = FakeData.generate(10)
     return cards
 }
+
+export const DirectCardData = (bin: number[]) => {
+    const FakeData = new CardGen(bin, 16)
+    const { cards } = FakeData.generate(10)
+    return cards
+}

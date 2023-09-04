@@ -1,5 +1,5 @@
 import { ButtonInteraction, Client, spoiler } from 'discord.js';
-import { InteractionButtons } from '../../events/ready/[02]-Interactions.js';
+import { InteractionButtons } from '../../events/ready/[03]-Interactions.js';
 import { ENV, GEN_CHANNEL } from '../../../config/config.js';
 import { InteractionEmbedBuilder } from '../../utils/builders.js';
 import { CARD_Select_Menu, ISP_Select_Menu } from '../selectMenuHandler/select-menu.js';
@@ -31,7 +31,8 @@ export default async (Instance: Client<true>, interaction: ButtonInteraction) =>
             await interaction.reply({
                 components: [
                     ISP_Select_Menu()
-                ]
+                ],
+                ephemeral: true
             })
             return
         }
@@ -40,7 +41,8 @@ export default async (Instance: Client<true>, interaction: ButtonInteraction) =>
             await interaction.reply({
                 components: [
                     CARD_Select_Menu()
-                ]
+                ],
+                ephemeral: true
             })
             return
         }
